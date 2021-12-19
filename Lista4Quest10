@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int main(void) 
+{
+  int ap[3][3], l, c, ct[3], cont = 0;
+  printf("Digite o numero de produtos no armazem:\n");
+  for(l=0; l<3; l++)
+  {
+    for(c=0; c<3; c++)
+    {
+      scanf("%i", &ap[l][c]);
+      printf("Armazem %i = %i\n", l, ap[l][c]);
+    }
+    printf("\n");
+  }
+  while(cont!=3)
+  {
+    printf("Digite o custo dos produtos:");
+    scanf("%i", ct[cont]);
+    printf("Custos do produto %i =  %i\n", cont, ct[cont]);
+  }
+  if(ap[0][1]>ap[1][1] && ap[0][1]>ap[2][1])
+  {
+    printf("Armazem 1 possui mais produtos 2\n");
+  }
+  else if(ap[1][1]>ap[0][1] && ap[1][1]>ap[2][1])
+  {
+    printf("Armazem 2 possui mais produtos 2\n");
+  }
+  else if(ap[2][1]>ap[0][1] && ap[2][1]>ap[1][1])
+  {
+    printf("O armazem 3 possui mais produtos 2\n");
+  }
+  else if(ap[0][1]==ap[1][1] && ap[1][1]>ap[2][1])
+  {
+    printf("Os armazens 1 e 2 possuem mais produtos 2\n");
+  }
+  else if(ap[0][1]==ap[2][1] && ap[0][1]>ap[1][1])
+  {
+    printf("Os armazens 1 e 3 possuem mais produtos 2\n");
+  }
+  else if(ap[2][1]==ap[1][1] && ap[1][1]>ap[0][1])
+  {
+    printf("Os armazens 2 e 3 possuem mais produtos 2\n");
+  }
+  else
+  {
+    printf("Todos os armazens possuem a mesma quantidade de produtos 2\n");
+  }
+}
